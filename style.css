@@ -37,3 +37,11 @@
     border: none;
     border-radius: 20px;
 }
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap ;
+}
+.box{
+    border: 1px solid rgba(0, 0, 0, 0.241);
+}
