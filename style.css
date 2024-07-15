@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.main{
+    width: 100vw;
+    height: 100vh;
+    font-family: verdana;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main h1{
+    margin-bottom: 20px;
+}
+.container{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 600px;
+    width: 600px;
+}
+.navigation{
+    width: 25%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.nav-button{
+    width: 100px;
+    height: 30px;
+    
+}
+.buttons{
+    outline: none;
+    border: none;
+    border-radius: 20px;
+}
