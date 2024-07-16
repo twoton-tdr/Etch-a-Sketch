@@ -30,12 +30,13 @@
 .nav-button{
     width: 100px;
     height: 30px;
-    
+    cursor: pointer;
 }
 .buttons{
     outline: none;
     border: none;
     border-radius: 20px;
+    
 }
 .container{
     display: flex;
@@ -55,10 +56,15 @@
 .heading{
     font-size: 24px;  
 }
-
+.slider{
+    accent-color: #028052;
+    width: 400px;
+    
+}
 .slider-parent{
     display: flex;
     align-items: center;
+
 }
 .slide{
     font-size: 18px;
@@ -66,7 +72,44 @@
     
 }
 .value{
+    border-radius: 20px;
+    width: 70px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 20px;
-    padding: 10px;
-    padding-bottom: 0px;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #028052;
+    color: white;
+}
+dialog {
+    /*used to center this dialog */
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    /*#############*/
+
+    border: none;
+    border-radius: 10px;
+    width: 500px;
+}
+#close{
+    width: 100px;
+    height: 20px;
+    border: none;
+    outline: none;
+    background-color: #028052;
+    border-radius: 20px;
+    color: white;
+    font-size: 18px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
