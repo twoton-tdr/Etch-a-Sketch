@@ -22,9 +22,13 @@ newGridBtn.addEventListener('click',openModal);
 //close button of the modal
 const closeBtn = document.querySelector("#close");
 
+//to apend child 
+const container = document.querySelector(".container");
+
 function openModal(){
     // used to open the modal each time new grid btn is clicked
     modal.showModal();
+    newGrid();
     value.textContent = slider.value;
     slider.oninput = function(){
 
@@ -46,9 +50,9 @@ closeBtn.addEventListener('click',()=>{
 function calculateWidth(value){
     //using to calculate the width and height of the boxes
     //the calculation is (1/value)*100 but here we have used the other method to round off effectively
-    width = (1/value)*10000;
+    width = (1/value)*1000000;
     width = Math.round(width);
-    width = width/100
+    width = width/10000
     return width;
 }
 
@@ -56,8 +60,7 @@ function createBoxes(value,width){
     //caluclating the total number of boxes
     const totalBox = value*value;
 
-    //to apend child 
-    const container = document.querySelector(".container");
+
 
     for(i=0;i<totalBox;++i){
         //creating each boxes and giving its properties
@@ -69,3 +72,9 @@ function createBoxes(value,width){
     }
 
 }
+
+function newGrid(){
+    //to reset the canvas
+    container.innerHTML="";
+}
+
