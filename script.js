@@ -1,10 +1,13 @@
+//to store width
+let width;
+
 //value display
 let value = document.querySelector(".value");
 
 //grid layout value
 const slider = document.querySelector("#slider");
 
-// val used to storage the final value of the slider selector
+// to store the selected grid value
 let val;
 
 //toggle new-grid button
@@ -19,13 +22,6 @@ newGridBtn.addEventListener('click',openModal);
 //close button of the modal
 const closeBtn = document.querySelector("#close");
 
-//used to close the modal
-closeBtn.addEventListener('click',()=>{
-    modal.close();
-})
-
-
-
 function openModal(){
     // used to open the modal each time new grid btn is clicked
     modal.showModal();
@@ -39,3 +35,37 @@ function openModal(){
     
 }
 
+//used to close the modal
+closeBtn.addEventListener('click',()=>{
+    modal.close();
+    calculateWidth(val);
+    console.log(width);
+    createBoxes(val,width);
+})
+
+function calculateWidth(value){
+    //using to calculate the width and height of the boxes
+    //the calculation is (1/value)*100 but here we have used the other method to round off effectively
+    width = (1/value)*10000;
+    width = Math.round(width);
+    width = width/100
+    return width;
+}
+
+function createBoxes(value,width){
+    //caluclating the total number of boxes
+    const totalBox = value*value;
+
+    //to apend child 
+    const container = document.querySelector(".container");
+
+    for(i=0;i<totalBox;++i){
+        //creating each boxes and giving its properties
+        const box = document.createElement("div");
+        container.appendChild(box);
+        box.style.width = width+"%";
+        box.style.height = width+"%";
+        box.classList.add("box");
+    }
+
+}
