@@ -42,6 +42,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap ;
+    cursor: url(/img/bx--paint.png);
 }
 .box{
     border: 1px solid rgba(0, 0, 0, 0.241);
@@ -115,7 +116,4 @@ dialog {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-}
-.eraser{
-    cursor: url('/img/eraser.png'),auto;
 }
