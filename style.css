@@ -21,7 +21,7 @@
     width: 600px;
 }
 .navigation{
-    width: 25%;
+    width: 45%;
     margin-top: 20px;
     display: flex;
     align-items: center;
@@ -115,4 +115,7 @@ dialog {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+.eraser{
+    cursor: url('/img/eraser.png'),auto;
 }

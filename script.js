@@ -31,7 +31,6 @@ function openModal(){
     newGrid();
     value.textContent = slider.value;
     slider.oninput = function(){
-
         //using to dynamically change the value displayed in the slider
         value.textContent = this.value;
         val = this.value;
@@ -77,6 +76,24 @@ function newGrid(){
     container.innerHTML="";
 }
 
+//listener to the color picker
+const colorPicker = document.querySelector('#Color-picker')
+let color;
+
+//getting choosed color
+colorPicker.addEventListener('input',()=>{
+    color=  colorPicker.value;
+    container.style.cursor = `url('/img/bx--paint.png'),auto`
+    return color;
+})
+
+//eraser
+const eraser = document.querySelector('#eraser');
+eraser.addEventListener('click',()=>{
+    color = 'white';
+    container.style.cursor = `url('/img/eraser.png'),auto`;
+})
+
 //clearing the canvas
 const reset = document.querySelector('#Reset');
 reset.addEventListener('click',()=>{
@@ -95,7 +112,7 @@ container.addEventListener('mousedown',(e)=> coloring=true);
 container.addEventListener('mousemove',(e)=>{
     if(coloring && e.target.classList.contains('box')){
         
-        e.target.style.backgroundColor ="black";
+        e.target.style.backgroundColor =color;
 
     }
 })
