@@ -43,7 +43,6 @@ function openModal(){
 closeBtn.addEventListener('click',()=>{
     modal.close();
     calculateWidth(val);
-    console.log(width);
     createBoxes(val,width);
 })
 
@@ -74,7 +73,34 @@ function createBoxes(value,width){
 }
 
 function newGrid(){
-    //to reset the canvas
+    //new canvas
     container.innerHTML="";
 }
+
+//clearing the canvas
+const reset = document.querySelector('#Reset');
+reset.addEventListener('click',()=>{
+    newGrid(); //creates a new newGrid
+    createBoxes(val,width); // specifies the width and value of the previous grid
+}
+)
+
+//to track whether the mouse button is pressed
+let coloring = false;
+
+//starting drawing point
+container.addEventListener('mousedown',(e)=> coloring=true);
+
+
+container.addEventListener('mousemove',(e)=>{
+    if(coloring && e.target.classList.contains('box')){
+        
+        e.target.style.backgroundColor ="black";
+
+    }
+})
+
+//stopping drawing point
+container.addEventListener('mouseup',()=>coloring=false);
+
 
