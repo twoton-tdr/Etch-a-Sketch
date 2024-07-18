@@ -47,9 +47,9 @@
 .box{
     border: 1px solid rgba(0, 0, 0, 0.241);
 }
-/* .box:hover{
+.box:hover{
     background-color: rgba(0, 0, 0, 0.075);
-} */
+}
 .dialog{
     padding: 10px;
     display: flex;

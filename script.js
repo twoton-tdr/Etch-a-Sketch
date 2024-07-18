@@ -74,6 +74,7 @@ function createBoxes(value,width){
 function newGrid(){
     //new canvas
     container.innerHTML="";
+    draw();
 }
 
 //listener to the color picker
@@ -105,6 +106,7 @@ reset.addEventListener('click',()=>{
 //to track whether the mouse button is pressed
 let coloring = false;
 
+function draw(){
 //starting drawing point
 container.addEventListener('mousedown',(e)=> coloring=true);
 
@@ -119,5 +121,48 @@ container.addEventListener('mousemove',(e)=>{
 
 //stopping drawing point
 container.addEventListener('mouseup',()=>coloring=false);
+}
+
+//random color
+let rgb;
+
+const randomColorBtn = document.querySelector('#randomColorBtn');
+
+randomColorBtn.addEventListener('click',randomColor);
+
+function randomColor(){
+    
+    container.addEventListener('mousedown',(e)=>coloring=true);
+
+    container.addEventListener('mousemove',(e)=>{
+        if(coloring && e.target.classList.contains('box')){
+            //same as draw function but this one produces a random color
+            //on each input
+            randomColorPicker();
+            e.target.style.backgroundColor =rgb;
+    
+        }
+    })
+    
+    container.addEventListener('mouseup',()=>coloring=false);
+}
 
 
+
+
+function randomColorPicker(){
+
+    //  creating random rgb codes
+
+    let ColorR = Math.round(Math.random()*1000);
+    let ColorG = Math.round(Math.random()*1000);
+    let ColorB = Math.round(Math.random()*1000);
+
+    
+    rgb = `rgb(${ColorR},${ColorG},${ColorB})`
+
+    //rgb color code rgb(0,0,0) to rgb(255,255,255)
+    if(ColorR>255 || ColorB>255 || ColorG>255){
+        randomColorPicker()
+    }
+}
