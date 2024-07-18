@@ -93,6 +93,7 @@ const eraser = document.querySelector('#eraser');
 eraser.addEventListener('click',()=>{
     color = 'white';
     container.style.cursor = `url('/img/eraser.png'),auto`;
+    draw();
 })
 
 //clearing the canvas
@@ -121,7 +122,7 @@ container.addEventListener('mousemove',(e)=>{
 
 //stopping drawing point
 container.addEventListener('mouseup',()=>coloring=false);
-}
+};
 
 //random color
 let rgb;
