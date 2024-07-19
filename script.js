@@ -116,7 +116,8 @@ container.addEventListener('mousemove',(e)=>{
     if(coloring && e.target.classList.contains('box')){
         
         e.target.style.backgroundColor =color;
-
+        
+        
     }
 })
 
@@ -124,6 +125,17 @@ container.addEventListener('mousemove',(e)=>{
 container.addEventListener('mouseup',()=>coloring=false);
 };
 
+colorPicker.addEventListener('click',draw);//to select draw() while changing from random color 
+
+container.addEventListener('click',(e)=>{
+    //enabling coloring with click 
+    
+    if(e.target.classList.contains('box')){
+        
+        e.target.style.backgroundColor =color;
+        
+    }
+})
 //random color
 let rgb;
 

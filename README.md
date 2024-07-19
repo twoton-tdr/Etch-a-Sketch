@@ -1,4 +1,4 @@
-This is an Etch-A-Sketch website that I created as part of The Odin Project curriculum
+git This is an Etch-A-Sketch website that I created as part of The Odin Project curriculum
 
 Live demonstration is here:
 https://twoton-tdr.github.io/Etch-a-Sketch/
