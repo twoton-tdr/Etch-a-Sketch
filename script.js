@@ -118,30 +118,33 @@ function draw(){
     container.addEventListener('mousemove',(e)=>{
         if(coloring && e.target.classList.contains('box')){
             e.target.style.backgroundColor =color;
+            e.target.style.opacity = 1;
         }
     })
 
     //stopping drawing point
     container.addEventListener('mouseup',()=>coloring=false);
+
+    container.addEventListener('click',(e)=>{
+        //enabling coloring with click 
+        
+        if(e.target.classList.contains('box')){
+            
+            e.target.style.backgroundColor =color;
+            //#####################################//
+            // to increase opacity with clicks
+            if(color!="white" && e.target.style.opacity<1){
+                e.target.style.opacity = (e.target.style.opacity*10+1)/10;
+                console.log(e.target.style.opacity)
+            }
+            //#####################################//
+        }
+    })
 };
 
 colorPicker.addEventListener('click',draw);//to select draw() while changing from random color 
 
-container.addEventListener('click',(e)=>{
-    //enabling coloring with click 
-    
-    if(e.target.classList.contains('box')){
-        
-        e.target.style.backgroundColor =color;
-        //#####################################//
-        // to increase opacity with clicks
-        if(color!="white" && e.target.style.opacity<1){
-            e.target.style.opacity = (e.target.style.opacity*10+1)/10;
-            console.log(e.target.style.opacity)
-        }
-        //#####################################//
-    }
-})
+
 
 //random color
 let rgb;
@@ -165,6 +168,16 @@ function randomColor(){
     })
     
     container.addEventListener('mouseup',()=>coloring=false);
+
+    container.addEventListener('click',(e)=>{
+        //enabling coloring with click 
+        
+        if(e.target.classList.contains('box')){
+            
+            randomColorPicker();
+            e.target.style.backgroundColor =rgb;
+        }
+    })
 }
 
 
