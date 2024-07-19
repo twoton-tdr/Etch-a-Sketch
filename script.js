@@ -25,6 +25,8 @@ const closeBtn = document.querySelector("#close");
 //to apend child 
 const container = document.querySelector(".container");
 
+//storing opacity
+
 function openModal(){
     // used to open the modal each time new grid btn is clicked
     modal.showModal();
@@ -66,7 +68,9 @@ function createBoxes(value,width){
         container.appendChild(box);
         box.style.width = width+"%";
         box.style.height = width+"%";
+        box.style.opacity = 0.7;
         box.classList.add("box");
+        container.style.cursor = `url('/img/bx--paint.png'),auto`;
     }
 
 }
@@ -108,21 +112,17 @@ reset.addEventListener('click',()=>{
 let coloring = false;
 
 function draw(){
-//starting drawing point
-container.addEventListener('mousedown',(e)=> coloring=true);
+    //starting drawing point
+    container.addEventListener('mousedown',(e)=> coloring=true);
 
+    container.addEventListener('mousemove',(e)=>{
+        if(coloring && e.target.classList.contains('box')){
+            e.target.style.backgroundColor =color;
+        }
+    })
 
-container.addEventListener('mousemove',(e)=>{
-    if(coloring && e.target.classList.contains('box')){
-        
-        e.target.style.backgroundColor =color;
-        
-        
-    }
-})
-
-//stopping drawing point
-container.addEventListener('mouseup',()=>coloring=false);
+    //stopping drawing point
+    container.addEventListener('mouseup',()=>coloring=false);
 };
 
 colorPicker.addEventListener('click',draw);//to select draw() while changing from random color 
@@ -133,9 +133,16 @@ container.addEventListener('click',(e)=>{
     if(e.target.classList.contains('box')){
         
         e.target.style.backgroundColor =color;
-        
+        //#####################################//
+        // to increase opacity with clicks
+        if(color!="white" && e.target.style.opacity<1){
+            e.target.style.opacity = (e.target.style.opacity*10+1)/10;
+            console.log(e.target.style.opacity)
+        }
+        //#####################################//
     }
 })
+
 //random color
 let rgb;
 
@@ -144,7 +151,7 @@ const randomColorBtn = document.querySelector('#randomColorBtn');
 randomColorBtn.addEventListener('click',randomColor);
 
 function randomColor(){
-    
+    container.style.cursor = `url('/img/bx--paint.png'),auto`;
     container.addEventListener('mousedown',(e)=>coloring=true);
 
     container.addEventListener('mousemove',(e)=>{
