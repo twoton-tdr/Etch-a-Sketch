@@ -135,7 +135,7 @@ function draw(){
             // to increase opacity with clicks
             if(color!="white" && e.target.style.opacity<1){
                 e.target.style.opacity = (e.target.style.opacity*10+1)/10;
-                console.log(e.target.style.opacity)
+                
             }
             //#####################################//
         }
