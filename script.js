@@ -47,6 +47,7 @@ closeBtn.addEventListener('click',()=>{
     createBoxes(val,width);
 })
 
+
 function calculateWidth(value){
     //using to calculate the width and height of the boxes
     //the calculation is (1/value)*100 but here we have used the other method to round off effectively
@@ -83,7 +84,8 @@ function newGrid(){
 
 //listener to the color picker
 const colorPicker = document.querySelector('#Color-picker')
-let color="black";
+color="black";
+
 
 //getting choosed color
 colorPicker.addEventListener('input',()=>{
@@ -199,3 +201,12 @@ function randomColorPicker(){
         randomColorPicker()
     }
 }
+
+//creating default 16*16 boxes at the start of the site
+const start = function(){
+    calculateWidth(16);
+    newGrid();
+    createBoxes(16,width);
+}
+
+start();
