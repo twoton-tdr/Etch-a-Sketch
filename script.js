@@ -84,7 +84,7 @@ function newGrid(){
 
 //listener to the color picker
 const colorPicker = document.querySelector('#Color-picker')
-color="black";
+color="#e66465";
 
 
 //getting choosed color

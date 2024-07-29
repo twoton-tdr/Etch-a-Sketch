@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
 }
+
 .main{
     width: 100vw;
     height: 100vh;
@@ -14,6 +15,7 @@
 }
 .main h1{
     margin-bottom: 20px;
+    color: rgb(62, 166, 255);
 }
 .container{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -33,10 +35,23 @@
     cursor: pointer;
 }
 .buttons{
+    color: rgb(62, 166, 255);
     outline: none;
-    border: none;
+    border: 3px solid rgb(62, 166, 255);
     border-radius: 20px;
+    background-color: #181818;
+    font-weight: 500 ;
     
+}
+#Color-picker{
+    background-color: #181818;
+    border: 3px solid rgb(62, 166, 255);
+    
+}
+  
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    overflow: hidden;
 }
 .container{
     display: flex;
@@ -45,7 +60,7 @@
     cursor: url(/img/bx--paint.png);
 }
 .box{
-    border: 1px solid rgba(0, 0, 0, 0.241);
+    border: 1px solid rgba(0, 0, 0, 0.144);
     
 }
 .box:hover{
