@@ -204,9 +204,10 @@ function randomColorPicker(){
 
 //creating default 16*16 boxes at the start of the site
 const start = function(){
-    calculateWidth(16);
+    val =16;
+    calculateWidth(val);
     newGrid();
-    createBoxes(16,width);
+    createBoxes(val,width);
 }
 
 start();
